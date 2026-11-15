@@ -1,0 +1,31 @@
+.advanced-lesson .slide-media{justify-content:flex-start;padding-top:40px}
+.lesson-visual{width:100%;position:relative;z-index:1;min-width:0}
+.visual-heading{color:var(--yellow);font-size:12px;line-height:1.6;font-weight:650;letter-spacing:.09em;margin:0 0 28px}
+.advanced-diagram{max-height:260px;margin-bottom:18px}
+.visual-checks{list-style:none;margin:0;padding:0;display:grid;gap:14px}
+.visual-checks li{display:grid;grid-template-columns:30px 1fr;gap:10px;align-items:baseline;font-size:15px;line-height:1.6;color:#e2e5eb}
+.visual-step{color:var(--yellow);font-size:12px;font-variant-numeric:tabular-nums}
+.lesson-metrics{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.lesson-metrics>div{min-width:0;padding:24px 14px;border:1px solid #ffb80050;border-radius:8px;background:#242932}
+.lesson-metrics b{display:block;color:var(--yellow);font-size:clamp(20px,2.2vw,28px);font-weight:650;white-space:nowrap;margin-bottom:12px}
+.lesson-metrics span{font-size:14px;line-height:1.6;display:block;color:#e2e5eb;overflow-wrap:anywhere}
+.weather-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.weather-grid>div{border:1px solid #ffffff24;border-radius:8px;padding:20px 12px;text-align:center;background:#2a3039}
+.weather-grid svg{width:80px;max-width:100%;display:block;margin:0 auto 12px}
+.weather-grid span{font-size:15px;color:#e2e5eb}
+.reaction-chart{display:grid;gap:25px;margin:34px 0}
+.reaction-row>div:first-child{display:flex;justify-content:space-between;gap:15px;font-size:16px;margin-bottom:10px;font-variant-numeric:tabular-nums}
+.reaction-row b{font-weight:550;color:#e2e5eb}.reaction-row>div>span{color:var(--yellow)}
+.reaction-track{height:14px;border-radius:3px;background:#ffffff0c;overflow:hidden}.reaction-track span{height:100%;display:block;background:var(--yellow);border-radius:3px}
+.reaction-row:last-child .reaction-track span{background:#ff7b85}
+.visual-sub{font-size:14px;color:#e2e5eb;line-height:1.65}
+.stopping-example{margin:24px 0}.stopping-formula{color:var(--yellow);font-size:15px;line-height:1.65;margin-bottom:20px}
+.lesson-table-wrap{overflow-x:auto;max-width:100%;border:1px solid #ffffff24;border-radius:6px}
+.lesson-table{width:100%;border-collapse:collapse;font-size:13px;color:#dce1e8;font-variant-numeric:tabular-nums}
+.lesson-table caption{text-align:left;font-size:14px;line-height:1.6;padding:12px;color:var(--ink)}
+.lesson-table th,.lesson-table td{text-align:right;padding:12px 8px;border-top:1px solid #ffffff20;min-width:65px}
+.lesson-table th:first-child{text-align:left;white-space:nowrap}.lesson-table th{font-weight:550}.lesson-table thead{background:#22252b}.lesson-table td:last-child{color:var(--yellow);font-weight:650;background:#ffb80009}
+.lesson-model-note{font-size:12px;line-height:1.8;color:#bfc1cb;margin-top:12px}
+.lesson-sources{border-top:1px solid #ffffff20;margin-top:24px;padding-top:18px;font-size:12px;line-height:1.8;color:#bfc1cb}
+.lesson-sources p{font-weight:650;color:#e2e5eb}.lesson-sources ul{list-style:none;margin:10px 0;padding:0}.lesson-sources li{margin:0 0 6px}.lesson-sources a{color:#e2e5eb;text-decoration:underline;text-underline-offset:3px}.lesson-sources a:hover{color:var(--yellow)}.lesson-sources small{font-size:11px}
+@media(max-width:760px){.advanced-lesson .slide-media{padding:24px;min-height:0}.advanced-diagram{max-height:180px}.visual-heading{margin-bottom:18px}.visual-checks{gap:9px}.lesson-metrics>div{padding:18px 12px}.lesson-metrics b{font-size:24px}.weather-grid svg{width:60px}.weather-grid>div{padding:15px}.reaction-chart{margin:20px 0;gap:18px}.advanced-lesson .diagram-note{margin-top:20px;font-size:11px}.lesson-table{font-size:12px}.lesson-table th,.lesson-table td{padding:10px 7px;min-width:60px}}

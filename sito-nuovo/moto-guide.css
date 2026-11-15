@@ -1,0 +1,28 @@
+/* Keep the share card and the motorcycle guide on the same contact-grid row. */
+.contact-grid{grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);grid-template-areas:"copy form" "share moto";row-gap:36px}
+.contact-copy{grid-area:copy;min-width:0}.contact-form{grid-area:form;min-width:0}
+.contact-grid>.share-card{grid-area:share;margin-top:0;min-width:0;align-self:stretch}
+.moto-card{grid-area:moto;min-width:0;align-self:stretch;padding:26px;border:1px solid #ffb80044;background:#ffb80005;border-radius:5px;scroll-margin-top:120px}
+.moto-card h3{font-size:clamp(23px,2.2vw,30px);line-height:1.2;letter-spacing:-.025em;margin:10px 0 14px}
+.moto-card p{color:#b8bcc6;line-height:1.65}.moto-intro{margin:0 0 23px;font-size:15px}
+.moto-tabs{display:flex;gap:8px;margin-bottom:22px}.moto-tabs button{flex:1;min-width:0;border:1px solid #50545b;background:#22262b;color:#d8dbe1;padding:12px 8px;font:inherit;font-size:14px;font-weight:650;cursor:pointer;border-radius:3px;line-height:1.35}
+.moto-tabs button[aria-selected=true]{background:#ffb800;color:#171b20;border-color:#ffb800}
+.moto-card :focus-visible{outline:2px solid #ffb800;outline-offset:5px}.moto-card [hidden]{display:none!important}
+.moto-course-heading{display:flex;align-items:start;gap:14px;justify-content:space-between;margin-bottom:14px}.moto-course-heading h4{font-size:18px;line-height:1.35;font-weight:600;max-width:230px;margin:0}
+.moto-timing{text-align:right;flex:0 0 108px}.moto-timing strong{display:block;color:#ffb800;font-size:25px;line-height:1.1;font-variant-numeric:tabular-nums;white-space:nowrap}.moto-timing span{display:block;font-size:11px;line-height:1.4;color:#b8bcc6;margin-top:4px}
+.moto-video{margin:0 0 14px;padding:14px;background:#1b1f24;border:1px solid #44474d;border-radius:5px;text-align:center}
+.moto-video figcaption{color:#e7e9ed;font-size:14px;font-weight:600;text-align:left;margin-bottom:12px;line-height:1.45}
+.moto-video video{display:block;width:100%;height:auto;max-height:420px;max-height:min(56svh,420px);object-fit:contain;background:#111418;border-radius:3px;margin:0 auto;accent-color:#ffb800}
+.moto-video-link{display:inline-block;margin-top:13px;padding:5px 0;color:#cdd2dc;font-size:12px;line-height:1.5;text-decoration:underline;text-underline-offset:3px}
+.moto-card .moto-video-error{color:#ffc38e;font-size:13px;line-height:1.5;margin:12px 0 0}
+.moto-diagram-details{margin:0 0 20px;border-bottom:1px solid #4a4638}
+.moto-diagram-details summary{padding:10px 0 14px;color:#d2d6df;cursor:pointer;font-size:13px;line-height:1.5}
+.moto-diagram-details .moto-figure{margin:0 0 16px}
+.moto-figure{margin:0 0 19px;background:#1e2227;border:1px solid #3a3e45;border-radius:4px;padding:12px 8px 10px}.moto-figure svg{display:block;width:100%;height:auto;max-height:250px}.moto-figure text{fill:#bbc2cc;font-family:inherit;font-size:12px}.moto-figure figcaption{text-align:center;color:#a6adb7;font-size:11px;line-height:1.4;margin-top:3px}
+.moto-track{fill:none;stroke:#49515d;stroke-width:22;stroke-linecap:round}.moto-route{fill:none;stroke:#ffb800;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}.moto-cone{fill:#e3e6ec;stroke:#1e2227;stroke-width:1.5}.moto-arrow{fill:none;stroke:#ffb800;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}.moto-stop{fill:#ffb80022;stroke:#ffb800;stroke-width:1.5}
+.moto-steps{list-style:none;counter-reset:moto;display:grid;gap:12px;margin:0 0 20px;padding:0}.moto-steps li{counter-increment:moto;display:grid;grid-template-columns:22px minmax(0,1fr);gap:8px;font-size:14px;color:#c7cbd2;line-height:1.6}.moto-steps li:before{content:counter(moto,decimal-leading-zero);color:#ffb800;font-size:11px;font-weight:700;padding-top:3px}
+.moto-details{border-block:1px solid #4a4638;margin-bottom:22px}.moto-details summary{padding:14px 0;cursor:pointer;font-size:14px;font-weight:600;line-height:1.5}.moto-detail-content{padding:4px 0 18px}.moto-details table{width:100%;border-collapse:collapse;font-size:12px;line-height:1.5;table-layout:fixed}.moto-details caption{text-align:left;color:#ffb800;margin-bottom:10px;font-weight:600}.moto-details th,.moto-details td{text-align:left;vertical-align:top;padding:9px 6px;border-bottom:1px solid #3d4149;overflow-wrap:anywhere}.moto-details th{width:56%;font-weight:500;color:#c7cbd2}.moto-details td{color:#f0f1f4}.moto-details h5{font-size:13px;color:#ffb800;margin:20px 0 8px}.moto-details p{font-size:13px;margin:0}
+.moto-cta{width:100%;text-align:center;justify-content:center;white-space:normal;line-height:1.4;padding:15px 12px;font-size:14px}.moto-card .moto-footnote{font-size:11px;line-height:1.65;margin:17px 0 12px}.moto-source{display:inline-block;font-size:11px;line-height:1.6;color:#d7dbe1;text-decoration:underline;text-underline-offset:3px}.moto-checked{display:block;font-size:10px;color:#929aa5;margin-top:8px}
+#contact-form{scroll-margin-top:110px}
+@media(max-width:860px){.contact-grid{grid-template-columns:minmax(0,1fr);grid-template-areas:"copy" "form" "share" "moto";row-gap:32px}.moto-card{padding:24px}.moto-figure svg{max-height:260px}}
+@media(max-width:420px){.moto-card{padding:20px}.moto-course-heading h4{font-size:17px}.moto-timing{flex-basis:95px}.moto-tabs button{font-size:13px}.moto-cta{font-size:13px}.contact-grid>.share-card{padding:22px}.share-qr img{max-width:100%;height:auto}}

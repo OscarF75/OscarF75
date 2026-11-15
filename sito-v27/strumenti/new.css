@@ -1,0 +1,335 @@
+
+/* ===== Accademia della Guida · grafica v27 =====
+   Carta chiara, inchiostro grafite, giallo di marca. Schede con bordo pieno e ombra netta. */
+:root{--bg:#f2efe7;--panel:#fff;--ink:#1d2026;--muted:#555b66;--yellow:#ffb800;--red:#d62839;--line:rgba(29,32,38,.16);--accent-ink:#1d2026;
+--edge:#1d2026;--mint:#8fe3b4;--sky:#a9c8ff;--coral:#ff9d7a;--r:24px;--shadow:6px 6px 0 var(--edge);
+--display:'Bricolage Grotesque','Arial Narrow',Arial,sans-serif;--serif:'Instrument Serif',Georgia,'Times New Roman',serif;--mono:'DM Mono',ui-monospace,Menlo,monospace;--body:'DM Sans',Arial,sans-serif}
+/* isole scure: mantengono i colori originali del sito */
+.method,.highway,.cockpit,.footer,.photo-frame,.hero-readout,.moto-card,.marquee{--bg:#22252b;--panel:#2c3037;--ink:#f5f5f2;--muted:#bec1ca;--line:rgba(255,255,255,.14);--accent-ink:#ffb800;color:var(--ink);color-scheme:dark}
+html{overflow-x:clip}
+body{overflow-x:clip;background:var(--bg);color:var(--ink);font-family:var(--body);line-height:1.6}
+::selection{background:var(--yellow);color:var(--edge)}
+button:focus-visible,a:focus-visible,input:focus-visible,select:focus-visible,summary:focus-visible{outline:3px solid var(--edge);outline-offset:4px}
+.method :focus-visible,.highway :focus-visible,.cockpit :focus-visible,.footer :focus-visible{outline-color:var(--yellow)}
+.wrap{width:min(1240px,calc(100% - 112px))}
+.section{padding:120px 0}
+
+/* tipografia */
+.display{font-family:var(--display);font-weight:800;text-transform:none;letter-spacing:-.045em}
+.section-title{font-size:clamp(40px,5.6vw,84px);line-height:.98;margin-top:22px}
+.display .accent,.hero h1 span{font-family:var(--serif);font-style:italic;font-weight:400;letter-spacing:-.025em;color:inherit}
+.accent{color:var(--accent-ink)}
+.eyebrow{font-family:var(--mono);font-size:12.5px;font-weight:500;letter-spacing:.09em;color:var(--ink);gap:10px}
+.eyebrow:before{width:10px;height:10px;border-radius:50%;background:var(--yellow);border:2px solid var(--edge);box-sizing:border-box}
+.method .eyebrow:before,.highway .eyebrow:before{border-color:var(--yellow)}
+.label{font-family:var(--mono);letter-spacing:.08em}
+.body-copy,.zone-intro{color:var(--muted)}
+
+/* bottoni */
+.btn{border:2px solid var(--edge);border-radius:999px;background:#fff;color:var(--edge);box-shadow:0 4px 0 var(--edge);gap:12px;transition:transform .15s,box-shadow .15s,background .15s}
+.btn:hover{border-color:var(--edge);transform:translateY(-2px);box-shadow:0 6px 0 var(--edge)}
+.btn:active{transform:translateY(3px);box-shadow:0 1px 0 var(--edge)}
+.btn-primary{background:var(--yellow);color:var(--edge);border-color:var(--edge);box-shadow:0 4px 0 var(--edge)}
+.btn-primary:hover{background:#ffc530;box-shadow:0 6px 0 var(--edge)}
+.method .btn,.highway .btn,.cockpit .btn,.footer .btn{box-shadow:0 4px 0 #000}
+.text-link{border-bottom:2px solid var(--yellow);padding-bottom:4px}
+.top-progress{height:4px}
+
+/* barra di navigazione a pillola */
+.navbar{left:50%;right:auto;top:16px;width:min(1240px,calc(100% - 32px));transform:translateX(-50%);height:66px;border:2px solid var(--edge);border-radius:999px;background:#fff;box-shadow:0 5px 0 var(--edge);backdrop-filter:none;-webkit-backdrop-filter:none;padding:0 12px 0 20px;gap:18px}
+.brandname{font-family:var(--display);font-size:13px;font-weight:800;letter-spacing:-.01em;line-height:1.05}
+.navlinks{gap:20px}
+.navlinks a{font-size:15px;font-weight:600;color:var(--ink)}
+.navlinks a:hover{color:var(--ink);text-decoration:underline;text-decoration-color:var(--yellow);text-decoration-thickness:3px;text-underline-offset:6px}
+.nav-status{font-family:var(--mono);color:var(--muted)}
+.nav-contact{background:var(--edge);color:#fff;border-color:var(--edge);box-shadow:none;min-height:42px;padding:10px 18px;white-space:nowrap;flex-shrink:0}
+.nav-contact:hover{background:#000;box-shadow:none}
+.nav-contact:before,.status-dot{box-shadow:none;width:7px;height:7px}
+.language-menu summary{border:2px solid var(--edge);border-radius:999px;min-height:42px;padding:6px 12px}
+.language-menu nav{border:2px solid var(--edge);border-radius:18px;box-shadow:var(--shadow);background:#fff}
+.language-menu a{border-radius:10px}
+.language-menu a:hover,.language-menu a[aria-current]{background:var(--yellow);color:var(--edge)}
+.menu-toggle{border:2px solid var(--edge);border-radius:50%}
+
+/* hero */
+.hero{height:auto;min-height:max(100svh,820px);background:var(--bg);perspective:none;display:flex;align-items:center;padding:140px 0 110px;overflow:hidden}
+.hero-shade,.hero-lens{display:none}
+.hero-content{height:auto;padding-top:0;display:block;z-index:3;margin:0 auto}
+.hero-text{max-width:min(640px,54%)}
+.hero-kicker{font-family:var(--mono);font-size:12.5px;letter-spacing:.09em;color:var(--ink);margin-bottom:26px}
+.hero-kicker i{width:10px;height:10px;border-radius:50%;border:2px solid var(--edge);box-sizing:border-box}
+.hero h1{font-size:clamp(60px,8.6vw,132px);line-height:.9;letter-spacing:-.055em;max-width:none}
+.hero h1 span{color:var(--ink);padding-bottom:.08em}
+.hero-description{max-width:470px;font-size:19px;line-height:1.6;color:var(--muted);margin:30px 0 24px}
+.hero-description strong{color:var(--ink)}
+.hero-badges{gap:8px;margin-bottom:32px}
+.hero-badges span{border:2px solid var(--edge);border-radius:999px;background:#fff;backdrop-filter:none;padding:6px 14px;font-size:13.5px;font-weight:600}
+.hero-badges b{color:var(--edge);background:var(--yellow);border-radius:50%;display:inline-grid;place-items:center;width:22px;height:22px;font-size:12px;margin:0 6px 0 -6px}
+.hero-footer{bottom:30px;font-family:var(--mono);color:var(--muted);letter-spacing:.09em;font-size:11.5px}
+.scroll-line{background:var(--line)}
+.hero-footer>span{display:none}
+.hero-visual{position:absolute;z-index:2;top:150px;bottom:110px;right:max(56px,calc((100vw - 1240px)/2));width:min(36vw,470px)}
+.hero-scene{position:absolute;inset:0;border:2px solid var(--edge);border-radius:40px;overflow:hidden;box-shadow:14px 14px 0 var(--edge);background:var(--yellow);rotate:2.5deg;transform-origin:center;will-change:auto}
+.hero-photo,.hero-video{object-position:60% 55%;filter:none}
+.hero-readout{position:absolute;right:auto;left:-70px;bottom:36px;width:210px;border:2px solid var(--edge);border-radius:22px;background:#22252b;padding:20px;box-shadow:var(--shadow);font-family:var(--mono);font-size:10.5px;letter-spacing:.1em;rotate:-4deg;z-index:3}
+.hero-readout strong{font-family:var(--display);font-weight:800;font-size:26px;letter-spacing:-.03em;color:var(--yellow)}
+.hero-sticker{position:absolute;z-index:3;border:2px solid var(--edge)}
+.sticker-ring{right:-34px;top:-44px;width:136px;height:136px;border-radius:50%;background:var(--yellow);box-shadow:4px 4px 0 var(--edge);display:grid;place-items:center}
+.sticker-ring svg{position:absolute;inset:4px;width:calc(100% - 8px);height:calc(100% - 8px);animation:adgSpin 22s linear infinite}
+.sticker-ring text{font-family:var(--mono);font-size:15.5px;font-weight:500;letter-spacing:.12em;fill:var(--edge)}
+.sticker-ring img{width:58px;height:58px;border-radius:50%;border:2px solid var(--edge)}
+.sticker-hours{left:-48px;top:74px;background:var(--mint);border-radius:18px;padding:14px 18px;box-shadow:var(--shadow);rotate:-5deg;font-size:13px;line-height:1.5;color:var(--edge)}
+.sticker-hours b{display:block;font-family:var(--display);font-weight:800;font-size:16px;letter-spacing:-.02em}
+.sticker-hours span{font-family:var(--mono);font-size:11.5px}
+.sticker-quote{right:-26px;bottom:-22px;max-width:220px;background:#fff;border-radius:18px 18px 4px 18px;padding:12px 18px;box-shadow:var(--shadow);font-family:var(--serif);font-style:italic;font-size:21px;line-height:1.15;color:var(--edge);rotate:3deg}
+@keyframes adgSpin{to{transform:rotate(360deg)}}
+.media-control{background:#fff;border:2px solid var(--edge);border-radius:999px;backdrop-filter:none;color:var(--edge);font-family:var(--mono);padding:7px 14px}
+.highway .media-control{bottom:28px;right:32px}
+
+/* nastro scorrevole */
+.marquee{position:relative;z-index:4;background:var(--edge);color:#f5f5f2;border-block:2px solid var(--edge);padding:18px 0;overflow:hidden;transform:rotate(-1.4deg) scale(1.03);margin:-24px 0 0}
+.marquee-track{display:flex;width:max-content;animation:adgMarquee 38s linear infinite}
+.marquee-track>div{display:flex;align-items:center;flex-shrink:0}
+.marquee b{font-family:var(--display);font-weight:800;font-size:30px;letter-spacing:-.03em;white-space:nowrap;text-transform:none}
+.marquee i{font-family:var(--serif);font-size:34px;white-space:nowrap}
+.marquee-dot{width:20px;height:11px;border-radius:999px;background:var(--yellow);margin:0 30px;flex-shrink:0}
+@keyframes adgMarquee{to{transform:translateX(-50%)}}
+
+/* tre percorsi rapidi */
+.intro-strip{background:none;border:0;padding:84px 0 0}
+.intro-strip .wrap{gap:22px;min-height:0;align-items:stretch}
+.strip-item,.strip-item+.strip-item{border:2px solid var(--edge);border-radius:var(--r);padding:26px 24px!important;background:#fff;box-shadow:var(--shadow);min-height:150px;align-items:flex-start;transition:transform .15s,box-shadow .15s}
+.strip-item:nth-child(1){background:var(--yellow)}
+.strip-item:nth-child(2){background:var(--mint)}
+.strip-item:nth-child(3){background:var(--sky)}
+.quick-path:hover{transform:translate(-2px,-2px);box-shadow:8px 8px 0 var(--edge)}
+.strip-item:nth-child(1):hover{background:var(--yellow)}
+.strip-item:nth-child(2):hover{background:var(--mint)}
+.strip-item:nth-child(3):hover{background:var(--sky)}
+.strip-item b{font-family:var(--mono);font-weight:500;font-size:13px;color:var(--edge);border:2px solid var(--edge);border-radius:999px;padding:2px 10px;background:#fff;line-height:1.5}
+.strip-item span{color:var(--edge);font-size:15px;line-height:1.5}
+.strip-item strong{color:var(--edge);font-family:var(--display);font-weight:800;font-size:23px;letter-spacing:-.03em;line-height:1.1;margin-bottom:8px}
+.quick-path .quick-arrow{color:var(--edge);font-size:22px;width:40px;height:40px;border:2px solid var(--edge);border-radius:50%;display:grid;place-items:center;background:#fff;flex-shrink:0;line-height:1}
+
+/* istruttore */
+.photo-frame{border:2px solid var(--edge);border-radius:32px;box-shadow:10px 10px 0 var(--edge)}
+.photo-frame:after{display:none}
+.photo-caption strong{font-family:var(--display);font-weight:800;letter-spacing:-.03em}
+.photo-caption span{font-family:var(--mono);letter-spacing:.09em}
+.photo-badge{border:2px solid var(--edge);border-radius:22px;box-shadow:var(--shadow);rotate:-4deg;right:-6px;bottom:6px}
+.photo-badge b{font-weight:800;letter-spacing:-.04em;line-height:1}
+.signature{font-family:var(--serif);font-size:30px;line-height:1.15}
+.target-list{border-top:2px solid var(--edge)}
+.target{border-bottom:2px solid var(--edge)}
+.target>span{font-family:var(--mono);font-size:13px;font-weight:500;border:2px solid var(--edge);border-radius:999px;background:var(--yellow);padding:1px 8px;align-self:start;justify-self:start;color:var(--edge)}
+.target{grid-template-columns:52px 1fr}
+.target h3{font-family:var(--display);font-weight:800;font-size:23px;letter-spacing:-.03em;line-height:1.2}
+.superprof-card{border:2px solid var(--edge);border-radius:var(--r);background:#fff;box-shadow:var(--shadow);padding:28px}
+.vehicle-panel{border:2px solid var(--edge);border-radius:32px;overflow:hidden;background:var(--sky);box-shadow:10px 10px 0 var(--edge)}
+.vehicle-copy h3{font-family:var(--display);font-weight:800;letter-spacing:-.04em;line-height:1.05;font-size:40px}
+.vehicle-copy p{color:var(--edge)}
+.vehicle-copy .eyebrow{color:var(--edge)}
+.vehicle-choices span{border:2px solid var(--edge);border-radius:999px;background:#fff;font-family:var(--mono);padding:6px 14px}
+.vehicle-photo{border:0;border-left:2px solid var(--edge);border-radius:0;box-shadow:none}
+
+/* metodo: fascia grafite */
+.method,.highway{background:#22252b;border:0;border-radius:48px;margin:0 14px}
+.method-head>p{color:var(--muted)}
+.method-visual{border:2px solid #f5f5f2;border-radius:28px}
+.method-visual-copy .display{line-height:1.02}
+.timeline-step h3{font-family:var(--display);font-weight:800;letter-spacing:-.03em;font-size:30px;line-height:1.1}
+.timeline-step .label{color:var(--yellow)}
+
+/* slide tecniche */
+.slide-tabs{gap:8px;padding:4px 4px 12px}
+.slide-tab{border:2px solid var(--edge);border-radius:18px;background:#fff;padding:12px 14px;font-weight:600}
+.slide-tab span{font-family:var(--mono);color:var(--muted);letter-spacing:.08em}
+.slide-tab[aria-selected=true]{background:var(--yellow);border-color:var(--edge);color:var(--edge);box-shadow:0 4px 0 var(--edge)}
+.slide-tab[aria-selected=true] span{color:var(--edge)}
+.cockpit{border:2px solid var(--edge);border-radius:32px;background:linear-gradient(135deg,#353a43,#2a2e35);box-shadow:12px 12px 0 var(--edge)}
+.cockpit .slide-content h3{font-family:var(--display);font-weight:800;letter-spacing:-.035em}
+.practice-cta{border:2px solid var(--edge);border-radius:var(--r);background:var(--yellow);box-shadow:var(--shadow);margin-top:40px}
+.practice-cta p{color:var(--edge);font-weight:600}
+.practice-cta .btn-primary{background:var(--edge);color:#fff}
+.practice-cta .btn-primary:hover{background:#000}
+
+/* autostrada */
+.highway{margin-top:0}
+.highway h2{line-height:1}
+
+/* teoria */
+.theory-mode{border-top:2px solid var(--edge)}
+.theory-icon{background:var(--yellow);color:var(--edge);border:2px solid var(--edge);border-radius:50%}
+.theory-mode h3{font-family:var(--display);font-weight:800;font-size:21px;letter-spacing:-.02em}
+.theory-program{border-top:2px solid var(--edge)}
+.program-row{border-bottom:2px solid var(--edge);padding:22px 0}
+.program-row b{font-family:var(--mono);font-weight:500;color:var(--edge);border:2px solid var(--edge);border-radius:999px;padding:1px 9px;background:var(--mint)}
+
+/* zone, orari, tariffa: schede */
+.availability{background:none;border:0}
+.info-grid{gap:22px;border:0}
+.info-card,.info-card+.info-card{border:2px solid var(--edge);border-radius:var(--r);background:#fff;box-shadow:var(--shadow)}
+.info-card:nth-child(2){background:var(--yellow)}
+.info-card:nth-child(3){background:var(--mint)}
+.info-card:after{display:none}
+.card-icon{font-family:var(--body);color:var(--edge);width:48px;height:48px;border:2px solid var(--edge);border-radius:50%;display:grid;place-items:center;background:#fff;font-size:20px;margin-bottom:22px}
+.info-card h3{font-family:var(--display);font-weight:800;font-size:32px;letter-spacing:-.04em;line-height:1.02}
+.info-card li{color:var(--edge)}
+.info-card li strong{font-weight:700}
+.info-card .tag{font-family:var(--mono);background:var(--edge);border:0;color:#fff;border-radius:999px;padding:6px 12px;letter-spacing:.06em}
+
+/* domande frequenti */
+.faq-section{background:var(--sky);border:0;border-radius:48px;margin:0 14px}
+.faq-list{border:0;display:grid;gap:12px}
+.faq-item{border:2px solid var(--edge);border-radius:20px;background:#fff;overflow:hidden}
+.faq-item summary{padding:20px 64px 20px 22px;font-size:18px;line-height:1.35}
+.faq-item summary::after{right:16px;top:50%;translate:0 -50%;width:34px;height:34px;border:2px solid var(--edge);border-radius:50%;display:grid;place-items:center;color:var(--edge);background:var(--yellow);font-size:20px;line-height:1}
+.faq-item[open] summary{color:var(--edge)}
+.faq-item[open]{box-shadow:var(--shadow)}
+.faq-item p{padding:0 22px 22px;color:var(--muted)}
+.faq-section .body-copy,.faq-section .faq-layout>div>p{color:var(--edge)}
+
+/* prenota: grande scheda gialla */
+#prenota .wrap{background:var(--yellow);border:2px solid var(--edge);border-radius:40px;box-shadow:12px 12px 0 var(--edge);padding:72px 64px}
+#prenota .muted{color:var(--edge)}
+#prenota .btn-primary{background:var(--edge);color:#fff}
+#prenota .btn-primary:hover{background:#000}
+
+/* app gratuite */
+.tools-section{background:none}
+.tool-card{border:2px solid var(--edge);border-radius:var(--r);background:#fff;box-shadow:var(--shadow)}
+.tool-card:nth-child(2){background:var(--mint)}
+.tool-card:nth-child(3){background:var(--yellow)}
+.tool-number{font-family:var(--mono);font-size:14px;font-weight:500;border:2px solid var(--edge);border-radius:999px;padding:2px 12px;background:#fff;color:var(--edge)}
+.tool-tag{font-family:var(--mono);color:var(--edge)}
+.tool-card h3{font-family:var(--display);font-weight:800;font-size:34px;letter-spacing:-.04em;line-height:1.05}
+.tool-card p,.tool-card li{color:var(--edge)}
+.tool-card .btn-primary{background:var(--edge);color:#fff}
+.tool-card .btn-primary:hover{background:#000}
+.tools-note{border:2px solid var(--edge);border-radius:var(--r);background:#fff}
+.tools-note p{color:var(--muted)}
+
+/* contatti */
+.contact-email{font-family:var(--display);font-weight:800;letter-spacing:-.03em;text-decoration-color:var(--yellow);text-decoration-thickness:4px}
+.contact-note{border-left:4px solid var(--yellow)}
+.contact-form{background:#fff;border:2px solid var(--edge);border-radius:32px;box-shadow:10px 10px 0 var(--edge)}
+.form-heading>span{width:48px;height:48px;border:2px solid var(--edge);border-radius:50%;background:var(--yellow);display:grid;place-items:center;color:var(--edge);font-family:var(--body);flex-shrink:0}
+.form-heading h3{font-family:var(--display);font-weight:800;font-size:26px;letter-spacing:-.03em;line-height:1.1}
+.form-heading p{font-family:var(--mono);letter-spacing:.06em}
+.field>span{color:var(--ink);font-weight:600;font-size:13.5px}
+.field input,.field select{border:2px solid var(--edge);border-radius:14px;background:var(--bg);color:var(--ink)}
+.field select option{background:#fff}
+.field input::placeholder{color:#8a8f99}
+.form-preview{background:var(--bg);border:2px dashed var(--edge);border-radius:14px;color:var(--ink)}
+.path-selected{color:var(--edge);background:var(--mint);border:2px solid var(--edge);border-radius:14px}
+.share-card{border:2px solid var(--edge);border-radius:var(--r);background:var(--mint);box-shadow:var(--shadow)}
+.share-card h3{font-family:var(--display);font-weight:800;letter-spacing:-.03em;font-size:28px;line-height:1.1}
+.share-card>p:not(.label){color:var(--edge)}
+.share-card img{border:2px solid var(--edge);border-radius:14px}
+.copy-fallback input{border:2px solid var(--edge);border-radius:12px;background:#fff}
+.moto-card{background:#22252b;border:2px solid var(--edge);border-radius:var(--r);box-shadow:var(--shadow)}
+.moto-card h3{font-family:var(--display);font-weight:800;letter-spacing:-.035em}
+
+/* piè di pagina, elementi fissi, finestre */
+.footer{background:#22252b;border:0;border-radius:48px 48px 0 0;margin-top:40px}
+.footer-low{color:var(--muted)}
+.floating-wa{border:2px solid var(--edge);box-shadow:0 4px 0 var(--edge);animation:none}
+.toast{background:#fff;border:2px solid var(--edge);border-radius:999px;box-shadow:0 5px 0 var(--edge);color:var(--edge)}
+.modal{background:#fff;border:2px solid var(--edge);border-radius:28px;box-shadow:10px 10px 0 var(--edge);color:var(--ink)}
+.modal h2{font-family:var(--display);font-weight:800;letter-spacing:-.03em}
+.modal a{color:var(--edge);text-decoration-color:var(--yellow);text-decoration-thickness:2px}
+.modal-close{border:2px solid var(--edge);border-radius:50%}
+.modal::backdrop{background:rgba(29,32,38,.55)}
+
+@media(max-width:1250px){.navlinks{background:#fff;border:2px solid var(--edge);border-radius:24px;box-shadow:var(--shadow);top:calc(100% + 12px);padding:12px}
+.navlinks a{padding:12px 14px;border-radius:12px}
+.hero-text{max-width:52%}
+}
+@media(max-width:1150px){.wrap{width:calc(100% - 72px)}
+.hero h1{font-size:8.4vw}
+.hero-visual{right:36px;width:38vw}
+.hero-readout{left:-40px;width:190px}
+.sticker-hours{left:-30px}
+}
+@media(max-width:900px){.navbar{left:50%;right:auto;top:12px;height:62px;padding:0 10px 0 16px}
+.wrap{width:calc(100% - 48px)}
+.section{padding:88px 0}
+.hero{display:flex;flex-direction:column;align-items:stretch;padding:120px 0 90px;min-height:0}
+.hero-content{order:1}
+.hero-visual{order:2}
+.hero .media-control{display:none}
+.hero-text{max-width:none}
+.hero h1{font-size:clamp(56px,13vw,104px)}
+.hero-visual{position:relative;top:auto;bottom:auto;right:auto;width:min(calc(100% - 96px),460px);height:420px;margin:64px auto 0}
+.hero-readout{display:block;left:-28px;bottom:26px}
+.hero-footer{display:none}
+.section-title{font-size:clamp(40px,7.4vw,60px)}
+.intro-strip .wrap{grid-template-columns:1fr;gap:16px;padding:0}
+.strip-item{min-height:0}
+.info-card{display:block}
+.info-card h3{margin-bottom:20px}
+.info-card .tag{margin-top:24px}
+.info-card ul li:first-child{margin-top:0}
+.method,.highway,.faq-section{border-radius:36px;margin:0 8px}
+#prenota .wrap{padding:48px 36px;border-radius:32px}
+.vehicle-copy h3{font-size:32px}
+}
+@media(max-width:640px){.wrap{width:calc(100% - 36px)}
+.navbar{left:50%;right:auto;top:10px;width:calc(100% - 20px);height:58px;padding:0 8px 0 12px;gap:8px}
+.brandname{font-size:11px}
+.nav-contact{background:var(--edge);color:#fff;border-radius:50%;width:42px;height:42px;min-height:42px;padding:0;flex-shrink:0}
+.language-menu summary{min-height:42px}
+.menu-toggle{width:42px;height:42px;flex-shrink:0}
+.nav-contact:before{color:#fff;font-size:20px}
+.section{padding:68px 0}
+.eyebrow{font-size:11px;letter-spacing:.07em}
+.section-title{font-size:clamp(38px,11.2vw,52px);letter-spacing:-.05em;line-height:1}
+.hero{padding:104px 0 84px;height:auto;max-height:none}
+.hero-content{padding:0}
+.hero-kicker{font-size:10.5px;letter-spacing:.07em;margin-bottom:20px}
+.hero h1{font-size:clamp(52px,16.4vw,84px);line-height:.92;letter-spacing:-.055em}
+.hero-description{font-size:17.5px;line-height:1.55;max-width:none;margin:24px 0 20px}
+.hero-badges{max-width:none;margin-bottom:28px}
+.hero-badges span{font-size:13px;padding:6px 12px}
+.hero .actions{align-items:stretch}
+.hero .btn{min-width:0;width:100%;font-size:16px;min-height:56px}
+.hero-visual{width:calc(100% - 72px);height:340px;margin-top:60px}
+.hero-scene{border-radius:30px;box-shadow:9px 9px 0 var(--edge)}
+.hero-readout{width:168px;padding:14px;left:-24px;bottom:22px;font-size:9px}
+.hero-readout strong{font-size:20px}
+.sticker-ring{width:104px;height:104px;right:-22px;top:-38px}
+.sticker-ring img{width:44px;height:44px}
+.sticker-hours{left:-24px;top:40px;padding:10px 14px}
+.sticker-hours b{font-size:14px}
+.sticker-quote{right:-18px;bottom:-22px;font-size:18px;max-width:170px;padding:10px 14px}
+.marquee{padding:13px 0}
+.marquee b{font-size:22px}
+.marquee i{font-size:25px}
+.marquee-dot{margin:0 20px;width:16px;height:9px}
+.intro-strip{padding:60px 0 0}
+.intro-strip .wrap{grid-template-columns:1fr;padding:0}
+.strip-item,.strip-item:nth-child(2),.strip-item:nth-child(3){display:flex;padding:20px 18px!important;border:2px solid var(--edge)}
+.strip-item b{font-size:12px}
+.strip-item strong{font-size:21px}
+.strip-item span{font-size:15px}
+.photo-frame{border-radius:26px;box-shadow:7px 7px 0 var(--edge)}
+.photo-badge{right:-4px}
+.signature{font-size:26px}
+.vehicle-panel{border-radius:26px;box-shadow:7px 7px 0 var(--edge)}
+.vehicle-photo{border-left:0;border-top:2px solid var(--edge)}
+.vehicle-copy h3{font-size:30px}
+.method,.highway,.faq-section{border-radius:28px;margin:0 6px}
+.timeline-step h3{font-size:25px}
+.cockpit{border-radius:24px;box-shadow:7px 7px 0 var(--edge)}
+.slide-tab{border-radius:14px}
+.practice-cta{flex-direction:column;align-items:stretch}
+.info-card h3{font-size:28px}
+.faq-item summary{font-size:17px;padding:18px 58px 18px 18px}
+.faq-item p{padding:0 18px 20px}
+#prenota .wrap{padding:36px 22px;border-radius:26px;box-shadow:7px 7px 0 var(--edge)}
+.tool-card h3{font-size:30px}
+.contact-form{border-radius:24px;box-shadow:7px 7px 0 var(--edge);padding:24px 18px}
+.footer{border-radius:32px 32px 0 0}
+.toast{border-radius:18px}
+}
+@media(prefers-reduced-motion:reduce){.marquee-track,.sticker-ring svg{animation:none!important}}

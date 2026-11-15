@@ -95,8 +95,8 @@ CSP_S = "default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self'
 rw = [{'source': '/api/:path*', 'destination': API + ':path*'}]
 for page in ('prenotazioni', 'statistiche'):
     for l in ('en', 'es', 'fr'):
-        rw.append({'source': '/' + page, 'has': [{'type': 'query', 'key': 'lang', 'value': l}], 'destination': '/pages/%s-%s.html' % (page, l)})
-    rw.append({'source': '/' + page, 'destination': '/pages/%s-it.html' % page})
+        rw.append({'source': '/' + page, 'has': [{'type': 'query', 'key': 'lang', 'value': l}], 'destination': '/pages/%s-%s' % (page, l)})
+    rw.append({'source': '/' + page, 'destination': '/pages/%s-it' % page})
 long = [{'key': 'Cache-Control', 'value': 'public, max-age=2592000'}]
 json.dump({'cleanUrls': True, 'trailingSlash': False, 'rewrites': rw,
            'headers': [{'source': '/(.*)', 'headers': [{'key': 'X-Content-Type-Options', 'value': 'nosniff'}, {'key': 'Referrer-Policy', 'value': 'strict-origin-when-cross-origin'}, {'key': 'X-Frame-Options', 'value': 'DENY'}]},

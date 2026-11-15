@@ -15,7 +15,7 @@
      "value": "en"
     }
    ],
-   "destination": "/pages/prenotazioni-en.html"
+   "destination": "/pages/prenotazioni-en"
   },
   {
    "source": "/prenotazioni",
@@ -26,7 +26,7 @@
      "value": "es"
     }
    ],
-   "destination": "/pages/prenotazioni-es.html"
+   "destination": "/pages/prenotazioni-es"
   },
   {
    "source": "/prenotazioni",
@@ -37,11 +37,11 @@
      "value": "fr"
     }
    ],
-   "destination": "/pages/prenotazioni-fr.html"
+   "destination": "/pages/prenotazioni-fr"
   },
   {
    "source": "/prenotazioni",
-   "destination": "/pages/prenotazioni-it.html"
+   "destination": "/pages/prenotazioni-it"
   },
   {
    "source": "/statistiche",
@@ -52,7 +52,7 @@
      "value": "en"
     }
    ],
-   "destination": "/pages/statistiche-en.html"
+   "destination": "/pages/statistiche-en"
   },
   {
    "source": "/statistiche",
@@ -63,7 +63,7 @@
      "value": "es"
     }
    ],
-   "destination": "/pages/statistiche-es.html"
+   "destination": "/pages/statistiche-es"
   },
   {
    "source": "/statistiche",
@@ -74,11 +74,11 @@
      "value": "fr"
     }
    ],
-   "destination": "/pages/statistiche-fr.html"
+   "destination": "/pages/statistiche-fr"
   },
   {
    "source": "/statistiche",
-   "destination": "/pages/statistiche-it.html"
+   "destination": "/pages/statistiche-it"
   }
  ],
  "headers": [

@@ -42,10 +42,8 @@ h = sub1(r'<h3>Calendario delle prenotazioni</h3><p>.*?</p>', '', h)
 h = sub1(r'<h3>Statistiche aggregate</h3><p>.*?</p><p>.*?</p>', '', h)
 h = must("function trackAction(action){", "function trackAction(action){return;", h)
 h = must('<link rel="preconnect" href="https://images.unsplash.com">', '<link rel="preconnect" href="https://images.unsplash.com"><link rel="manifest" href="/site.webmanifest">', h)
-extra = ('.hero-photo{object-position:32% 22%}.portrait-main img{object-position:center 30%}.vehicle-photo img{object-position:62% 62%}'
-         '.moto-video{display:none}')
+extra = ('.hero-photo{object-position:32% 22%}.portrait-main img{object-position:center 30%}.vehicle-photo img{object-position:62% 62%}')
 h = must('</style>\n<script defer src="/moto-guide.js?v=2">', extra + '</style>\n<script defer src="/moto-guide.js?v=2">', h)
-h = re.sub(r' poster="/images/moto/[^"]+"', '', h)
 h = h.replace(OLD, ORIGIN)
 assert 'chatgpt.site/' not in h.replace('autolog-cell.oscar1975.chatgpt.site', '').replace('costi-viaggio-oscar.oscar1975.chatgpt.site', '').replace('tempi-guida-tratte.oscar1975.chatgpt.site', '')
 open(work + '/home.html', 'w', encoding='utf-8').write(h)
@@ -63,6 +61,9 @@ const h=fs.readFileSync('home.html','utf8');validateTranslations(h);
 for(const [l,f] of [['it','index'],['en','en'],['es','es'],['fr','fr']])fs.writeFileSync(process.argv[2]+'/'+f+'.html',localizedHome(h,l));""")
 subprocess.run(['node', 'gen.mjs', site], cwd=work, check=True)
 
+os.makedirs(site + '/images/moto'); os.makedirs(site + '/videos')
+for n in ('lento', 'veloce'):
+    shutil.copy(os.path.join(S, 'vid/percorso-%s.webp' % n), site + '/images/moto/'); shutil.copy(os.path.join(S, 'vid/moto-percorso-%s.mp4' % n), site + '/videos/')
 for f in ['logo.svg', 'advanced-lessons.css', 'moto-guide.css', 'moto-guide.js']:
     shutil.copy(os.path.join(S, 'src/public', f), site)
 langs = {'it': '/', 'en': '/en', 'es': '/es', 'fr': '/fr'}
@@ -74,5 +75,6 @@ json.dump({'name': 'Accademia della Guida', 'short_name': 'Accademia', 'start_ur
            'icons': [{'src': '/favicon.png', 'sizes': '192x192', 'type': 'image/png'}, {'src': '/icon-512.png', 'sizes': '512x512', 'type': 'image/png'}]}, open(site + '/site.webmanifest', 'w'))
 json.dump({'cleanUrls': True, 'trailingSlash': False,
            'headers': [{'source': '/(.*)', 'headers': [{'key': 'X-Content-Type-Options', 'value': 'nosniff'}, {'key': 'Referrer-Policy', 'value': 'strict-origin-when-cross-origin'}, {'key': 'X-Frame-Options', 'value': 'DENY'}]},
+                       {'source': '/videos/(.*)', 'headers': [{'key': 'Cache-Control', 'value': 'public, max-age=2592000'}]},
                        {'source': '/images/(.*)', 'headers': [{'key': 'Cache-Control', 'value': 'public, max-age=2592000'}]}]}, open(site + '/vercel.json', 'w'), indent=1)
 print('ok', hero, port, cab)

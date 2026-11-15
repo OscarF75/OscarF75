@@ -1,0 +1,1 @@
+(()=>{try{const url=new URL(location.href),lang=localStorage.getItem('adg-language');if(!url.searchParams.has('lang')&&['en','es','fr'].includes(lang)){url.searchParams.set('lang',lang);location.replace(url.href)}}catch{}})();

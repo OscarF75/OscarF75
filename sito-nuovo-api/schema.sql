@@ -1,0 +1,10 @@
+CREATE SCHEMA IF NOT EXISTS adg;
+CREATE TABLE IF NOT EXISTS adg.analytics_dimensions (day text NOT NULL, dimension text NOT NULL, value text NOT NULL, views integer NOT NULL DEFAULT 0, PRIMARY KEY (day, dimension, value));
+CREATE TABLE IF NOT EXISTS adg.analytics_hours (bucket bigint PRIMARY KEY, views integer NOT NULL DEFAULT 0);
+CREATE TABLE IF NOT EXISTS adg.analytics_meta (key text PRIMARY KEY, value text NOT NULL);
+CREATE TABLE IF NOT EXISTS adg.analytics_actions (day text NOT NULL, action text NOT NULL, clicks integer NOT NULL DEFAULT 0, PRIMARY KEY (day, action));
+CREATE TABLE IF NOT EXISTS adg.booking_settings (id integer PRIMARY KEY, value text NOT NULL, revision integer NOT NULL);
+CREATE TABLE IF NOT EXISTS adg.bookings (id text PRIMARY KEY, token_hash text NOT NULL, name text NOT NULL, day text NOT NULL, start integer NOT NULL, "end" integer NOT NULL, active integer NOT NULL DEFAULT 1, revision integer NOT NULL DEFAULT 1, created_at text NOT NULL, updated_at text NOT NULL);
+CREATE UNIQUE INDEX IF NOT EXISTS booking_token ON adg.bookings (token_hash);
+CREATE INDEX IF NOT EXISTS booking_day ON adg.bookings (day, active);
+CREATE TABLE IF NOT EXISTS adg.adg_config (key text PRIMARY KEY, value text NOT NULL);

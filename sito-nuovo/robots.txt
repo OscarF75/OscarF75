@@ -1,4 +1,7 @@
 User-agent: *
 Allow: /
+Disallow: /statistiche
+Disallow: /pages/
+Disallow: /api/
 
 Sitemap: https://accademia-della-guida.vercel.app/sitemap.xml

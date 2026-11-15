@@ -1,6 +1,86 @@
 {
  "cleanUrls": true,
  "trailingSlash": false,
+ "rewrites": [
+  {
+   "source": "/api/:path*",
+   "destination": "https://scmiyjbhxmwzzcafzves.supabase.co/functions/v1/adg/:path*"
+  },
+  {
+   "source": "/prenotazioni",
+   "has": [
+    {
+     "type": "query",
+     "key": "lang",
+     "value": "en"
+    }
+   ],
+   "destination": "/pages/prenotazioni-en.html"
+  },
+  {
+   "source": "/prenotazioni",
+   "has": [
+    {
+     "type": "query",
+     "key": "lang",
+     "value": "es"
+    }
+   ],
+   "destination": "/pages/prenotazioni-es.html"
+  },
+  {
+   "source": "/prenotazioni",
+   "has": [
+    {
+     "type": "query",
+     "key": "lang",
+     "value": "fr"
+    }
+   ],
+   "destination": "/pages/prenotazioni-fr.html"
+  },
+  {
+   "source": "/prenotazioni",
+   "destination": "/pages/prenotazioni-it.html"
+  },
+  {
+   "source": "/statistiche",
+   "has": [
+    {
+     "type": "query",
+     "key": "lang",
+     "value": "en"
+    }
+   ],
+   "destination": "/pages/statistiche-en.html"
+  },
+  {
+   "source": "/statistiche",
+   "has": [
+    {
+     "type": "query",
+     "key": "lang",
+     "value": "es"
+    }
+   ],
+   "destination": "/pages/statistiche-es.html"
+  },
+  {
+   "source": "/statistiche",
+   "has": [
+    {
+     "type": "query",
+     "key": "lang",
+     "value": "fr"
+    }
+   ],
+   "destination": "/pages/statistiche-fr.html"
+  },
+  {
+   "source": "/statistiche",
+   "destination": "/pages/statistiche-it.html"
+  }
+ ],
  "headers": [
   {
    "source": "/(.*)",
@@ -34,6 +114,65 @@
     {
      "key": "Cache-Control",
      "value": "public, max-age=2592000"
+    }
+   ]
+  },
+  {
+   "source": "/prenotazioni",
+   "headers": [
+    {
+     "key": "Cache-Control",
+     "value": "private, no-store, max-age=0"
+    },
+    {
+     "key": "X-Robots-Tag",
+     "value": "noindex, nofollow, noarchive"
+    },
+    {
+     "key": "Referrer-Policy",
+     "value": "no-referrer"
+    },
+    {
+     "key": "Content-Security-Policy",
+     "value": "default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self'; connect-src 'self'; frame-ancestors 'none'; base-uri 'none'; form-action 'self'"
+    }
+   ]
+  },
+  {
+   "source": "/statistiche",
+   "headers": [
+    {
+     "key": "Cache-Control",
+     "value": "private, no-store, max-age=0"
+    },
+    {
+     "key": "X-Robots-Tag",
+     "value": "noindex, nofollow, noarchive"
+    },
+    {
+     "key": "Referrer-Policy",
+     "value": "no-referrer"
+    },
+    {
+     "key": "Content-Security-Policy",
+     "value": "default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; connect-src 'self'; frame-ancestors 'none'; base-uri 'none'; form-action 'self'"
+    }
+   ]
+  },
+  {
+   "source": "/pages/(.*)",
+   "headers": [
+    {
+     "key": "Cache-Control",
+     "value": "private, no-store, max-age=0"
+    },
+    {
+     "key": "X-Robots-Tag",
+     "value": "noindex, nofollow, noarchive"
+    },
+    {
+     "key": "Referrer-Policy",
+     "value": "no-referrer"
     }
    ]
   }
